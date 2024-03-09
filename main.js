@@ -2,6 +2,7 @@
 
 let form = document.querySelector(".category__button");
 //console.log(form)
+let itemsList = document.querySelector(".todo-list");
 form.addEventListener("click", addItem);
 
 function addItem(e){
@@ -38,19 +39,23 @@ function addItem(e){
    newElementButtons.appendChild(deleteBtn);
    newElement.appendChild(newElementButtons);
    
-   let itemsList = document.querySelector(".todo-list");
+  // let itemsList = document.querySelector(".todo-list");
    console.log(itemsList);
    itemsList.appendChild(newElement);
    newItemInput.value = "";
 }
 
-//<div class="todo__items items">
-//<div class="items__content">
- // <div class="items__radio"></div>
- // <div class="items__text">Complete task1</div>
-//</div>
-//<div class="items__buttons">
- // <button class="items__button-edit" type="button">Edit</button>
- // <button class="items__button-delete" type="button">Delete</button>
-//</div>  
-//</div>
+// delete task
+itemsList.addEventListener("click", removeItem);
+
+function removeItem(e){
+    
+    if(e.target.hasAttribute("data-action")&&
+    e.target.getAttribute("data-action") == "delete"){
+
+    
+    if(confirm("Remove task?")){
+        e.target.closest(".items").remove();
+    }
+}
+}
