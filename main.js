@@ -1,6 +1,7 @@
 
 let form = document.querySelector(".category__button");
 let itemsList = document.querySelector(".todo-list");
+let inputBox = document.querySelector(".form-todo__add-text");
 
 form.addEventListener("click", addItem);
 itemsList.addEventListener("click", removeItem);
@@ -10,11 +11,15 @@ itemsList.addEventListener("click", editTask);
 // add task
 function addItem(e){
     e.preventDefault();
-   // console.log("Fired!!!");
-   let newItemInput = document.querySelector(".form-todo__add-text");
-   //console.log(newItemInput);
-   let newItemText = newItemInput.value;
-   //console.log(newItemText);
+   //let newItemInput = document.querySelector(".form-todo__add-text");
+   //let newItemText = newItemInput.value;
+
+   if (inputBox.value.trim() === "") {
+    alert("Write something"); 
+  } else {
+    let newItemInput = inputBox;
+    let newItemText = newItemInput.value;
+
 
    let newElement = document.createElement("div");
    newElement.className = "items";
@@ -45,12 +50,12 @@ function addItem(e){
    newElement.appendChild(newElementButtons);
    
   // let itemsList = document.querySelector(".todo-list");
-   console.log(itemsList);
+  // console.log(itemsList);
    itemsList.appendChild(newElement);
    newItemInput.value = "";
    newItemInput.focus();
 }
-
+}
 // delete task
 function removeItem(e){
     
@@ -77,13 +82,11 @@ function doneTask(e){
 
 // edit task
 
-function editTask(e){
-
-    if(e.target.hasAttribute("data-action")&&
-    e.target.getAttribute("data-action") == "edit") {
-      let parentNode =  e.target.closest(".items");
-      let taskText = parentNode.querySelector(".items__text");
-      
-      
-    }   
-}
+function editTask(e) {
+    const textEdit = document.querySelector(".items__text");
+    console.log("click edit btn", textEdit);
+  
+    textEdit.contentEditable = true; 
+    textEdit.focus();
+    
+  }
