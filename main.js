@@ -83,10 +83,12 @@ function doneTask(e){
 // edit task
 
 function editTask(e) {
-    const textEdit = document.querySelector(".items__text");
-    console.log("click edit btn", textEdit);
-  
+    if (e.target.dataset.action === "edit"){
+    let parentNode = e.target.closest(".items");
+    let textEdit = parentNode.querySelector(".items__text");
+    //console.log("click edit btn", textEdit);
+    textEdit.classList.toggle("items__text_edit");
     textEdit.contentEditable = true; 
     textEdit.focus();
-    
+    } 
   }

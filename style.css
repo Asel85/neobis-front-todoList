@@ -239,3 +239,6 @@ body{
     background-color:red;
     color: #ffff;   
 }
+.items__text_edit{
+    outline: none;
+}
