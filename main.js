@@ -87,7 +87,7 @@ function editTask(e) {
     let parentNode = e.target.closest(".items");
     let textEdit = parentNode.querySelector(".items__text");
     //console.log("click edit btn", textEdit);
-    textEdit.classList.toggle("items__text_edit");
+    textEdit.classList.add("items__text_edit");
     textEdit.contentEditable = true; 
     textEdit.focus();
     } 

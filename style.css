@@ -86,110 +86,14 @@ body{
 .form-todo__add-text::placeholder{
     font-weight: 500;
 }
-.category{
-    max-width: 500px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    margin-bottom: 20px;
-}
-.category__title{
-    font-weight: 700;
-    color: gray;
-}
-.category__radios{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.radio__business{
-    padding: 20px 60px;
-    border-radius: 20px;
-    background-color:#ffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 10px;
-}
-.radio__business input{
-    visibility: hidden;
-}
-.radio__business label{
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 25px;
-    margin-right: 0;
-    line-height: 18px;
-    user-select: none;
-}
-.radio__business label::before{
-    content: "";
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    left: 40px;
-    bottom: 25px;
-    border:2px solid blue;
-    border-radius: 50%;
-}
-.radio__business input:checked + label:before{
-    background-color: blue;
-}
-.radio__business label:hover::before{
-    filter: brightness(120%);
-}
-.radio__business input:disabled + label::before{
-    filter: grayscale(100%);
-}
-.radio__personal{
-    padding: 20px 60px;
-    border-radius: 20px;
-    background-color:#ffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 10px;
-}
-.radio__personal input{
-    visibility: hidden;
-}
-.radio__personal label{
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 25px;
-    margin-right: 0;
-    line-height: 18px;
-    user-select: none;
-}
-.radio__personal label::before{
-    content: "";
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    left: 40px;
-    bottom: 25px;
-    border:2px solid red;
-    border-radius: 50%;
-}
-.radio__personal input:checked + label:before{
-    background-color:red;
-}
-.radio__personal label:hover::before{
-    filter: brightness(120%);
-}
-.radio__personal input:disabled + label::before{
-    filter: grayscale(100%);
-}
 .category__button{
     padding: 15px;
     border-radius: 10px;
     background-color: blue;
     color: #ffff;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 .todo-list__title{
     font-size: 18px;
